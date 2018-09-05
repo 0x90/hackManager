@@ -1,1 +1,1 @@
-winappdbg==1.4
+winappdbg

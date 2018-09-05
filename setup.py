@@ -1,8 +1,5 @@
-from setuptools import setup, find_packages  # Always prefer setuptools over distutils
-from codecs import open  # To use a consistent encoding
-from os import path
+from setuptools import setup  # Always prefer setuptools over distutils
 
-here = path.abspath(path.dirname(__file__))
 long_description = "hackManager is a set of tools created to ease the process of hack and anti-hack development."
 
 setup(
@@ -53,14 +50,14 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages = ['hackManager'],
+    packages=['hackManager'],
     include_package_data=True,
 
     # List run-time dependencies here.  These will be installed by pip when your
     # project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/technical.html#install-requires-vs-requirements-files
-    install_requires=['ctypes', 'winappdbg'],
+    install_requires=['winappdbg'],
 
     # If there are data files included in your packages that need to be
     # installed, specify them here.  If using Python 2.6 or less, then these
@@ -72,7 +69,7 @@ setup(
     # need to place data files outside of your packages.
     # see http://docs.python.org/3.4/distutils/setupscript.html#installing-additional-files
     # In this case, 'data_file' will be installed into '<sys.prefix>/my_data'
-    #data_files=[],
+    # data_files=[],
 
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
