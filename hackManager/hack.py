@@ -67,6 +67,7 @@ class Hack(object):
         self.pid = None
         self.threads = {}
         self.process = None
+        self.debug = None
         self.hook_dict = {}
         self.base_address = None
         self.last_address = None
@@ -118,12 +119,12 @@ class Hack(object):
 
         if len(self.hook_dict.keys()) == 0:
             raise ValueError("You need to call Hack().add_hook() first! You currently haven't added any hooks!")
-        debug = winappdbg.Debug(BasicEventHandler(self.hook_dict))
+        self.debug = winappdbg.Debug(BasicEventHandler(self.hook_dict))
         try:
-            debug.attach(self.process.get_pid())
-            debug.loop()
+            self.debug.attach(self.process.get_pid())
+            self.debug.loop()
         finally:
-            debug.stop()
+            self.debug.stop()
 
     def get_threads(self):
         """
