@@ -1,9 +1,0 @@
-setup.py
-hackManager/__init__.py
-hackManager/hack.py
-hackManager/test.py
-hackManager.egg-info/PKG-INFO
-hackManager.egg-info/SOURCES.txt
-hackManager.egg-info/dependency_links.txt
-hackManager.egg-info/requires.txt
-hackManager.egg-info/top_level.txt
