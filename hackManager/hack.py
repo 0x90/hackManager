@@ -9,8 +9,8 @@ __websites__ = [
 ]
 __info__ = "Memory hacking software"
 __author__ = "SirFroweey (a.k.a Froweey)"
-__version__ = "2.5.0"
-__date__ = "06/16/2017"
+__version__ = "2.5.2"
+__date__ = "09/06/2018"
 
 
 # This project was created using winappdbg.
