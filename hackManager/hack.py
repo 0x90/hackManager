@@ -38,13 +38,14 @@ class BasicEventHandler(winappdbg.EventHandler):
                             pid,
                             module.resolve(dict_module_function_name),
                             dict_module_function,
-                            paramCount = len(inspect.getargspec(dict_module_function)[0])-2
+                            paramCount=len(inspect.getargspec(dict_module_function)[0])-2
                         )
+
 
 class Hack(object):
     """Base class utilized to make hack development for any type of game/software easy."""
     
-    def __init__(self, processName=None):
+    def __init__(self, processName=None, pid=None):
         """
         process_name = 'Notepad'
         i = Hack(process_name).
@@ -107,10 +108,10 @@ class Hack(object):
         Hack('process_name.exe').hook(hook_dict)
         """
         if self.hwnd is None:
-            raise ValueError, "You need to specify the process name, i.e.: Hack('process_name.exe').hook()"
+            raise ValueError("You need to specify the process name, i.e.: Hack('process_name.exe').hook()")
 
         if len(self.hook_dict.keys()) == 0:
-            raise ValueError, "You need to call Hack().add_hook() first! You currently haven't added any hooks!"       
+            raise ValueError("You need to call Hack().add_hook() first! You currently haven't added any hooks!")
         debug = winappdbg.Debug( BasicEventHandler(self.hook_dict) )
         try:
             debug.attach(self.hwnd.get_pid())
@@ -169,7 +170,7 @@ class Hack(object):
                 else:
                     if name == processName:
                         self.hwnd = process
-                        break;
+                        break
                 
     def get_base_address(self):
         """
@@ -178,7 +179,7 @@ class Hack(object):
         """
         process = self.hwnd
         if process is None:
-            raise ValueError, "Could not find process."
+            raise ValueError("Could not find process.")
         bits = process.get_bits()
         for module in process.iter_modules():
             if module.get_filename().split("\\")[-1] == self.name:
@@ -189,7 +190,7 @@ class Hack(object):
                 self.module_base_dict[module_name] = module.get_base()
         try:
             self.set_last_address()
-        except IndexError, e:
+        except IndexError as e:
             pass
 
     def read(self, address, length):
