@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from setuptools import setup  # Always prefer setuptools over distutils
 
 long_description = "hackManager is a set of tools created to ease the process of hack and anti-hack development."
@@ -8,7 +9,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
-    version='2.5.0',
+    version='2.5.1',
 
     description='Process memory hacking(editing) library',
     long_description=long_description,
